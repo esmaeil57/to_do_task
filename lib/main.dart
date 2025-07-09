@@ -7,7 +7,6 @@ import 'domain/repo_interface/task_repo.dart';
 import 'presentation/cubit/task_cubit.dart';
 import 'presentation/ui/task_screen.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();

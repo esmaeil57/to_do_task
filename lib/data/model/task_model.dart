@@ -9,7 +9,6 @@ class TaskModel {
 
   // Mapping between Entity <-> Model
   Task toEntity() => Task(title: title, isDone: isDone);
-
   static TaskModel fromEntity(Task task) => TaskModel(title: task.title, isDone: task.isDone);
 }
 
