@@ -8,8 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:to_do_task/data/model/task_model.dart';
-import 'package:to_do_task/data/repo/task_repo_impl.dart';
-import 'package:to_do_task/domain/repo_interface/task_repo.dart';
+import 'package:to_do_task/di_container.dart' as di;
 import 'package:to_do_task/main.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -17,9 +16,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(TaskModelAdapter());
-  final taskBox = await Hive.openBox<TaskModel>('tasks');
-
-  TaskRepo repository = TaskRepositoryImpl(taskBox);
+  await di.init();
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
