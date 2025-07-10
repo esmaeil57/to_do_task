@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:to_do_task/domain/entity/task.dart';
+import 'package:to_do_task/my_tasks/domain/entity/task.dart';
 
 class TaskModel {
   String title;

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:to_do_task/di_container.dart' as di;
-import 'data/model/task_model.dart';
-import 'presentation/cubit/task_cubit.dart';
-import 'presentation/ui/task_screen.dart';
+import 'package:to_do_task/my_tasks/di/di_container.dart' as di;
+import 'my_tasks/data/model/task_model.dart';
+import 'my_tasks/presentation/ui/task_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,14 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => di.di<TaskCubit>(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'To Do Task',
-        home: TaskScreen(),
-        theme: ThemeData.dark(),
-        ),
-    );
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'To Do Task',
+      home: TaskScreen(),
+      theme: ThemeData.dark(),
+      );
   }
 }

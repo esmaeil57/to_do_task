@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:to_do_task/presentation/cubit/task_state.dart';
+import 'package:to_do_task/my_tasks/presentation/cubit/task_state.dart';
 import '../../domain/repo_interface/task_repo.dart';
 import '../../domain/entity/task.dart';
 
